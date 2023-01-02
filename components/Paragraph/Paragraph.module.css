@@ -1,0 +1,22 @@
+.paragraph {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  color: #647196;
+  padding: 0 24px 14px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph {
+    padding: 0 40px 20px 40px;
+  }
+}

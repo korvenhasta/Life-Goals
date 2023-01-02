@@ -1,0 +1,45 @@
+.button {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  width: 80px;
+  height: 30px;
+  background: #AD1FEA;
+  color: #F2F4FE;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: #C75AF6;
+}
+
+/* Variants */
+
+/* Close */
+.button_close {
+  background: #3A4374;
+}
+
+.button_close:hover {
+  background: #656EA3;
+}
+
+/* Delete */
+.button_delete {
+  background: #D73737;
+}
+
+.button_delete:hover {
+  background: #E98888;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    width: 140px;
+    height: 44px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

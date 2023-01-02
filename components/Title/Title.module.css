@@ -1,0 +1,26 @@
+.title {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: #3A4374;
+  padding: 26px 24px 3px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    padding: 28px 40px 5px 40px;
+  }
+}

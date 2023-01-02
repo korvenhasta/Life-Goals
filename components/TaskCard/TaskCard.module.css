@@ -1,0 +1,8 @@
+.taskCard {
+  position: relative;
+  background: #FFFFFF;
+  width: 80%;
+  min-height: 175px;
+  border-radius: 10px;
+  margin: 24px 32px 24px 16px;
+}
