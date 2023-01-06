@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
-import tasks from "./tasks";
+import tasks from "../dummyData/tasks";
 import { useState } from "react";
 import AddingTask from "../components/AddingTask/AddingTask";
 
