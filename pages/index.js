@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import tasks from "./tasks";
 import { useState } from "react";
+import AddingTask from "../components/AddingTask/AddingTask";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function Home() {
         />
       </Head>
       <main className={styles.main}>
+        <AddingTask />
         {tasks.map((task) => {
           return <TaskCard key={task.id} title={task.task} date={task.date} />;
         })}
