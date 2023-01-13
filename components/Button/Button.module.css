@@ -31,12 +31,22 @@
   background: #7C91F9;
 }
 
-/* Delete */
-.button_delete {
+/* Secondary */
+.button_secondary {
+  background: #3A4374
+}
+
+.button_secondary:hover {
+  background: #656EA3;
+}
+
+
+/* Danger */
+.button_danger {
   background: #D73737;
 }
 
-.button_delete:hover {
+.button_danger:hover {
   background: #E98888;
 }
 

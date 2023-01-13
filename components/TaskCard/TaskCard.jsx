@@ -15,7 +15,7 @@ export default function TaskCard({...props}) {
         <Button>Complete</Button>
         <Container>
           <Button variant={"button_edit"}>Edit</Button>
-          <Button variant={"button_delete"}>Delete</Button>
+          <Button variant={"button_danger"}>Delete</Button>
         </Container>
       </ButtonContainer>
     </div>
