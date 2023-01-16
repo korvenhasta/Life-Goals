@@ -4,12 +4,13 @@
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
-  width: 80px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   background: #AD1FEA;
   color: #F2F4FE;
   border-radius: 10px;
   margin-right: 10px;
+  border: none;
 }
 
 .button:hover {
@@ -52,7 +53,7 @@
 
 @media screen and (min-width: 768px) {
   .button {
-    width: 140px;
+    width: 100%;
     height: 44px;
     font-size: 14px;
     line-height: 20px;

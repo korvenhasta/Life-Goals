@@ -9,6 +9,7 @@ import Paragraph from '../Paragraph/Paragraph'
 import Container from '../Container/Container'
 import Button from '../Button/Button'
 import AddTaskImg from '../AddTaskImg/AddTaskImg'
+import ButtonContainer from '../ButtonContainer/ButtonContainer'
 
 export default function AddingTask() {
   return (
@@ -22,13 +23,12 @@ export default function AddingTask() {
           <Input></Input>
           <Subtitle>Estimated due date</Subtitle>
           <Paragraph>Add a date when you think this task should be completed</Paragraph>
-          <Container>
+          <ButtonContainer>
             <Input></Input>
-          </Container>
-          <Container >
+          </ButtonContainer>
+          
             <Button>Add Task</Button>
             <Button variant={"button_secondary"}>Cancel</Button>
-          </Container>
         </FormLabel>
       </Form>
     </div>

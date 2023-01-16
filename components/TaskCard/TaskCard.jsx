@@ -11,13 +11,22 @@ export default function TaskCard({...props}) {
     <div className={styles.taskCard}>
       <Title>{props.title}</Title>
       <Paragraph>Estimated due date: {props.date}</Paragraph>
-      <ButtonContainer>
-        <Button>Complete</Button>
+      <Container>
+
+        <ButtonContainer>
+          <Button>Complete</Button>
+        </ButtonContainer>
+
         <Container>
-          <Button variant={"button_edit"}>Edit</Button>
-          <Button variant={"button_danger"}>Delete</Button>
+          <ButtonContainer>
+            <Button variant={"button_edit"}>Edit</Button>
+          </ButtonContainer>
+          <ButtonContainer>
+            <Button variant={"button_danger"}>Delete</Button>
+          </ButtonContainer>
         </Container>
-      </ButtonContainer>
+
+      </Container>
     </div>
   )
 }
