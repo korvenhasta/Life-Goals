@@ -9,25 +9,21 @@ import Paragraph from '../Paragraph/Paragraph'
 import Container from '../Container/Container'
 import Button from '../Button/Button'
 import AddTaskImg from '../AddTaskImg/AddTaskImg'
-import ButtonContainer from '../ButtonContainer/ButtonContainer'
 
 export default function AddingTask() {
   return (
-    <div className={styles.addingTask}>
+    <div className={styles.addingTask + ' p-m'}>
       <AddTaskImg/>
+      <Title>New Task</Title>
       <Form>
-        <Title>New Task</Title>
         <FormLabel htmlFor="task">
           <Subtitle>Task Name</Subtitle>
           <Paragraph>Add a short, descriptive headline</Paragraph>
           <Input></Input>
           <Subtitle>Estimated due date</Subtitle>
           <Paragraph>Add a date when you think this task should be completed</Paragraph>
-          <ButtonContainer>
             <Input></Input>
-          </ButtonContainer>
-          
-            <Button>Add Task</Button>
+            <Button variant={"button_primary"}>Add Task</Button>
             <Button variant={"button_secondary"}>Cancel</Button>
         </FormLabel>
       </Form>

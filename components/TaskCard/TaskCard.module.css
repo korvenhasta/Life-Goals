@@ -7,3 +7,9 @@
   border-radius: 10px;
   margin: 24px 32px 24px 16px;
 }
+
+@media screen and (min-width: 768px) {
+  .taskCard {
+    /* width: 140px; */
+  }
+}

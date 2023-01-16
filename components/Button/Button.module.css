@@ -4,24 +4,23 @@
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
-  width: 100%;
+  width: 248px;
   height: 40px;
-  background: #AD1FEA;
   color: #F2F4FE;
   border-radius: 10px;
-  /* margin-right: 10px; */
   border: none;
 }
 
-.button:hover {
-  background: #C75AF6;
+/* Variants */
+
+/* Primary */
+.button_primary {
+  background: #AD1FEA;
 }
 
-/* .button:last-child {
-  margin-right: 0;
-} */
-
-/* Variants */
+.button_primary:hover {
+  background: #C75AF6;
+}
 
 /* Edit */
 .button_edit {
@@ -53,7 +52,7 @@
 
 @media screen and (min-width: 768px) {
   .button {
-    width: 100%;
+    width: 128px;
     height: 44px;
     font-size: 14px;
     line-height: 20px;

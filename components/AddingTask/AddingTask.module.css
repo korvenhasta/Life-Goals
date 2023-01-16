@@ -1,4 +1,7 @@
 .addingTask {
+  display: grid;
+  gap: 16px;
+  width: 80%;
   background-color: #FFFFFF;
   border-radius: 10px;
   position: relative;
