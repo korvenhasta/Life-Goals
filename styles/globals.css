@@ -106,3 +106,7 @@ a {
     color-scheme: dark;
   }
 }
+
+.p-m {
+  padding: 24px;
+}

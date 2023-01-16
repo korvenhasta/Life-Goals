@@ -1,5 +1,6 @@
 .taskCard {
-  position: relative;
+  display: grid;
+  gap: 16px;
   background: #FFFFFF;
   width: 80%;
   min-height: 175px;

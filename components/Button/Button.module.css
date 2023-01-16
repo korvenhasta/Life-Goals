@@ -9,7 +9,7 @@
   background: #AD1FEA;
   color: #F2F4FE;
   border-radius: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   border: none;
 }
 
@@ -17,9 +17,9 @@
   background: #C75AF6;
 }
 
-.button:last-child {
+/* .button:last-child {
   margin-right: 0;
-}
+} */
 
 /* Variants */
 

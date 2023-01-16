@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import styles from './TaskCard.module.css'
 import Title from '../Title/Title'
 import Paragraph from '../Paragraph/Paragraph'
@@ -8,22 +8,15 @@ import Container from '../Container/Container'
 
 export default function TaskCard({...props}) {
   return (
-    <div className={styles.taskCard}>
+    <div className={styles.taskCard + ' p-m'}>
       <Title>{props.title}</Title>
       <Paragraph>Estimated due date: {props.date}</Paragraph>
       <Container>
-
-        <ButtonContainer>
           <Button>Complete</Button>
-        </ButtonContainer>
 
         <Container>
-          <ButtonContainer>
             <Button variant={"button_edit"}>Edit</Button>
-          </ButtonContainer>
-          <ButtonContainer>
             <Button variant={"button_danger"}>Delete</Button>
-          </ButtonContainer>
         </Container>
 
       </Container>
