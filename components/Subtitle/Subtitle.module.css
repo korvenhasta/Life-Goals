@@ -7,3 +7,19 @@
   letter-spacing: -0.180556px;
   color: #3A4374;
 }
+
+@media screen and (min-width: 768px) {
+  .subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.194444px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.194444px;
+  }
+}

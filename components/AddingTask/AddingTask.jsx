@@ -23,8 +23,10 @@ export default function AddingTask() {
           <Subtitle>Estimated due date</Subtitle>
           <Paragraph>Add a date when you think this task should be completed</Paragraph>
             <Input></Input>
-            <Button variant={"button_primary"}>Add Task</Button>
-            <Button variant={"button_secondary"}>Cancel</Button>
+            <Container>
+              <Button variant={"button_primary"}>Add Task</Button>
+              <Button variant={"button_secondary"}>Cancel</Button>
+            </Container>
         </FormLabel>
       </Form>
     </div>
