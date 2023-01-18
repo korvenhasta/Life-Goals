@@ -77,7 +77,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 html,
@@ -109,4 +109,10 @@ a {
 
 .p-m {
   padding: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .p-m {
+    padding: 42px;
+  }
 }

@@ -13,3 +13,10 @@
     line-height: 20px;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .paragraph {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

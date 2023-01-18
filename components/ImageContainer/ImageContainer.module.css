@@ -1,0 +1,15 @@
+.imageContainer {
+  position: absolute;
+  top: -20px;
+  left: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .imageContainer {
+    width: 56px;
+    height: 56px;
+    top: -28px;
+  }
+}

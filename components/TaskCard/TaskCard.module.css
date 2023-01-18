@@ -10,6 +10,12 @@
 
 @media screen and (min-width: 768px) {
   .taskCard {
-    /* width: 140px; */
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .taskCard {
+    width: 60%;
   }
 }

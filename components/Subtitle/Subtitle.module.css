@@ -23,3 +23,10 @@
     letter-spacing: -0.194444px;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

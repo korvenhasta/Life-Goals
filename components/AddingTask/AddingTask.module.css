@@ -7,3 +7,15 @@
   position: relative;
   margin: 55px 24px 77px 24px;
 }
+
+@media screen and (min-width: 768px) {
+  .addingTask {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .addingTask {
+    width: 60%;
+  }
+}
