@@ -7,7 +7,7 @@ import tasks from "../dummyData/tasks";
 import { useState } from "react";
 import AddingTask from "../components/AddingTask/AddingTask";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         <meta name="author" content="Marina Kenina" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className={styles.main + " p-m"}>
         <AddingTask />
         {tasks.map((task) => {
           return <TaskCard key={task.id} title={task.task} date={task.date} />;
