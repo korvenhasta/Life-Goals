@@ -23,18 +23,20 @@ export default function AddingTask() {
       <Title>New Task</Title>
 
       <Form onSubmit={onSubmit}>
-        <FormLabel htmlFor="task"></FormLabel>
-        <Subtitle>Task Name</Subtitle>
+        <FormLabel htmlFor="taskName">Task Name</FormLabel>
         <Paragraph>Add a short, descriptive headline</Paragraph>
         <Input
+          id="taskName"
+          type="text"
           name="taskName"
           validationConfig={validationConfig.addingTask.taskName}
         />
-        <Subtitle>Estimated due date</Subtitle>
+        <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
         <Paragraph>
           Add a date when you think this task should be completed
         </Paragraph>
         <Input
+          id="taskDate"
           type="date"
           name="taskDate"
           validationConfig={validationConfig.addingTask.taskDate}

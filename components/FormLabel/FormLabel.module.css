@@ -1,3 +1,32 @@
 .label {
-  
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: -0.180556px;
+  color: #3A4374;
+}
+
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.194444px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .label {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.194444px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .label {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
