@@ -12,12 +12,15 @@
     "@hookform/error-message": "^2.0.1",
     "@next/font": "13.0.7",
     "bootstrap": "^5.2.3",
-    "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.41.5"
+    "react-hook-form": "^7.42.1"
+  },
+  "devDependencies": {
+    "eslint": "7.17.0",
+    "prettier": "2.8.3"
   }
 }
