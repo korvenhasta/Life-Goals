@@ -10,7 +10,6 @@ import Paragraph from "../Paragraph/Paragraph";
 import Container from "../Container/Container";
 import Button from "../Button/Button";
 import AddTaskImg from "../AddTaskImg/AddTaskImg";
-import { useForm } from "react-hook-form";
 
 export default function AddingTask() {
   const onSubmit = (data) => {
