@@ -7,8 +7,6 @@ import tasks from "../dummyData/tasks";
 import { useState } from "react";
 import AddingTask from "../components/AddingTask/AddingTask";
 
-// const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
@@ -18,9 +16,6 @@ export default function Home() {
           name="description"
           content="Help people to reach their goals through links between tasks and goals with timeline."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Marina Kenina" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main + " p-m"}>
         <AddingTask />

@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import React from 'react'
-import ImageContainer from '../ImageContainer/ImageContainer'
-import styles from './AddTaskImg.module.css'
+import Image from "next/image";
+import React from "react";
+import ImageContainer from "../LogoImageContainer/LogoImageContainer";
+import styles from "./AddTaskImg.module.css";
 
 export default function AddTaskImg() {
   return (
@@ -14,5 +14,5 @@ export default function AddTaskImg() {
         sizes="(min-width: 768px) 100vw"
       />
     </ImageContainer>
-  )
+  );
 }
