@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
+    "@hookform/resolvers": "^2.9.10",
     "@next/font": "13.0.7",
-    "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.42.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "7.17.0",
+    "prettier": "2.8.3"
   }
 }

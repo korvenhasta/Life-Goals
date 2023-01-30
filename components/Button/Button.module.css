@@ -4,42 +4,64 @@
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
-  width: 80px;
-  height: 30px;
-  background: #AD1FEA;
+  width: 248px;
+  height: 40px;
   color: #F2F4FE;
   border-radius: 10px;
-}
-
-.button:hover {
-  background: #C75AF6;
+  border: none;
 }
 
 /* Variants */
 
-/* Close */
-.button_close {
-  background: #3A4374;
+/* Primary */
+.button_primary {
+  background: #AD1FEA;
 }
 
-.button_close:hover {
+.button_primary:hover {
+  background: #C75AF6;
+}
+
+/* Edit */
+.button_edit {
+  background: #4661E6;
+}
+
+.button_edit:hover {
+  background: #7C91F9;
+}
+
+/* Secondary */
+.button_secondary {
+  background: #3A4374
+}
+
+.button_secondary:hover {
   background: #656EA3;
 }
 
-/* Delete */
-.button_delete {
+
+/* Danger */
+.button_danger {
   background: #D73737;
 }
 
-.button_delete:hover {
+.button_danger:hover {
   background: #E98888;
 }
 
 @media screen and (min-width: 768px) {
   .button {
-    width: 140px;
+    width: 128px;
     height: 44px;
     font-size: 14px;
     line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 18px;
+    line-height: 26px;
   }
 }

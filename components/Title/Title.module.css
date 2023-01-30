@@ -2,25 +2,22 @@
   font-family: 'Jost', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 13px;
-  line-height: 19px;
+  font-size: 18px;
+  line-height: 26px;
   color: #3A4374;
-  padding: 26px 24px 3px 24px;
 }
 
 @media screen and (min-width: 768px) {
   .title {
-    font-size: 18px;
-    line-height: 26px;
-    letter-spacing: -0.25px;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: -0.333333px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 2560px) {
   .title {
-    font-size: 18px;
-    line-height: 26px;
-    letter-spacing: -0.25px;
-    padding: 28px 40px 5px 40px;
+    font-size: 30px;
+    line-height: 44px;
   }
 }
