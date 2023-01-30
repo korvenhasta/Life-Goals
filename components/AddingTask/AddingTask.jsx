@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./AddingTask.module.css";
-import validationConfig from "../../validationConfig/validationConfig";
 import Form from "../Form/Form";
 import Title from "../Title/Title";
 import FormLabel from "../FormLabel/FormLabel";
 import Input from "../Input/Input";
-import Subtitle from "../Subtitle/Subtitle";
 import Paragraph from "../Paragraph/Paragraph";
 import Container from "../Container/Container";
 import Button from "../Button/Button";
 import AddTaskImg from "../AddTaskImg/AddTaskImg";
+import { taskSchema } from "../../validationConfig/yupSchemas";
 
 export default function AddingTask() {
   const onSubmit = (data) => {
@@ -21,25 +20,15 @@ export default function AddingTask() {
       <AddTaskImg />
       <Title>New Task</Title>
 
-      <Form onSubmit={onSubmit}>
-        <FormLabel htmlFor="taskName">Task Name</FormLabel>
+      <Form onSubmit={onSubmit} noValidate schema={taskSchema}>
+        <FormLabel htmlFor="Task Name">Task Name</FormLabel>
         <Paragraph>Add a short, descriptive headline</Paragraph>
-        <Input
-          id="taskName"
-          type="text"
-          name="taskName"
-          validationConfig={validationConfig.addingTask.taskName}
-        />
+        <Input id="taskName" type="text" name="taskName" />
         <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
         <Paragraph>
           Add a date when you think this task should be completed
         </Paragraph>
-        <Input
-          id="taskDate"
-          type="date"
-          name="taskDate"
-          validationConfig={validationConfig.addingTask.taskDate}
-        />
+        <Input id="taskDate" type="date" name="taskDate" />
         <Container>
           <Button variant={"button_primary"} type="submit">
             Add Task

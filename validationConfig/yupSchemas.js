@@ -1,10 +1,12 @@
 import * as yup from "yup";
 
-const schema = yup
+export const taskSchema = yup
   .object({
-    taskName: yup.string().required(),
-    taskDate: yup.date().isValid().required(),
+    taskName: yup.string().required("Task name is a required!"),
+    taskDate: yup
+      .date()
+      .required("The date should be valid!")
+      .nullable()
+      .transform((v) => (v instanceof Date && !isNaN(v) ? v : null)),
   })
   .required();
-
-export default schema;
