@@ -1,0 +1,13 @@
+.delitingPopup {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  gap: 16px; 
+}
+
+@media screen and (min-width: 768px) {
+  .delitingPopup {
+    gap: 20px;
+  }
+}

@@ -15,7 +15,14 @@ export default function TaskCard(props) {
 
         <Container>
           <Button variant={"button_edit"}>Edit</Button>
-          <Button variant={"button_danger"}>Delete</Button>
+          <Button
+            variant={"button_danger"}
+            onClick={() => {
+              props.handleDeleteTask(props.taskId);
+            }}
+          >
+            Delete
+          </Button>
         </Container>
       </Container>
     </div>

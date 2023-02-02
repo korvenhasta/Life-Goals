@@ -1,9 +1,9 @@
 import { useState, createContext, useContext } from "react";
-// import { useForm } from "react-hook-form";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
+import DeletingPopUp from "../components/DeletingPopUp/DeletingPopUp";
 
 const formContext = createContext({});
 
@@ -26,10 +26,14 @@ export default function Home() {
       },
     ]);
     setTaskId(taskId + 1);
-    // reset({
-    //   task: task.taskName,
-    //   date: Date.now(),
-    // });
+  }
+
+  function deleteTask(taskId) {
+    setTasks(
+      tasks.filter((task) => {
+        return task.id != taskId;
+      })
+    );
   }
 
   console.log("TASKS: ", tasks);
@@ -49,6 +53,8 @@ export default function Home() {
           />
         </Head>
         <main className={styles.main + " p-m"}>
+          <DeletingPopUp />
+
           <AddingTask />
           {tasks.map((task) => {
             return (
@@ -57,6 +63,7 @@ export default function Home() {
                 taskId={task.id}
                 taskName={task.task}
                 taskDate={task.date}
+                handleDeleteTask={deleteTask}
               />
             );
           })}
