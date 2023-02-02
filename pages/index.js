@@ -53,7 +53,7 @@ export default function Home() {
           />
         </Head>
         <main className={styles.main + " p-m"}>
-          <DeletingPopUp />
+          {/* <DeletingPopUp /> */}
 
           <AddingTask />
           {tasks.map((task) => {

@@ -17,7 +17,6 @@ export default function Form({
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = methods;
 
   return (
