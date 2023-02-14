@@ -1,6 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Awesome To-Do List
 
-## Getting Started
+# What
+
+> Current project. There are not many features realized in this project, because I am still working on it. 
+
+This is a to-do list application. You can add a new task and delete it. 
+
+In the future I am going to add a timeline function. You can "zoom out" and see only long-term tasks. When you "zoom in" you see short-term tasks. You can also connect tasks and find out which tasks hepl you to reach your long-term goals.
+
+# Run
 
 First, run the development server:
 
@@ -12,23 +20,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# How
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+In this app I used technologies:
+- React
+- Next.js
+- HTML
+- CSS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Check the code samples to see how I used libraries:
+- [React-Hook-Form](https://github.com/korvenhasta/awesome-todo-list/blob/main/components/Form/Form.jsx)
+- [Yup validation](https://github.com/korvenhasta/awesome-todo-list/blob/main/validationConfig/yupSchemas.js)
 
-## Learn More
+# Demo
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![demo1](https://user-images.githubusercontent.com/51381521/218780636-c50be431-ef87-4092-bcd4-7a670e648eb3.gif)
