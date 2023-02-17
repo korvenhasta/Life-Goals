@@ -1,4 +1,4 @@
-# Awesome To-Do List
+# Life Goals
 
 # What
 
