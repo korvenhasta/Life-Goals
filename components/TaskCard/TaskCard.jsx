@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./TaskCard.module.css";
 import Subtitle from "../Subtitle/Subtitle";
 import Paragraph from "../Paragraph/Paragraph";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
-import Popup from "reactjs-popup";
-import DeletingPopUp from "../DeletingPopUp/DeletingPopUp";
+import Modal from "../../pages/Modal";
 
 export default function TaskCard(props) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={styles.taskCard + " p-m"}>
       <Subtitle>{props.taskName}</Subtitle>
@@ -17,35 +18,21 @@ export default function TaskCard(props) {
 
         <Container>
           <Button variant={"button_edit"}>Edit</Button>
-
-          {/* <Popup
-            trigger={
-              <Button
-                variant={"button_danger"}
-                onClick={() => {
-                  props.handleDeleteTask(props.taskId);
-                }}
-              >
-                Delete
-              </Button>
-            }
-            position="right center"
-          >
-            <div>
-              <DeletingPopUp />
-            </div>
-          </Popup> */}
-
           <Button
             variant={"button_danger"}
             onClick={() => {
-              props.handleDeleteTask(props.taskId);
+              setIsOpen(true);
             }}
           >
             Delete
           </Button>
         </Container>
       </Container>
+      <Modal
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        onClickDelete={() => props.handleDeleteTask(props.taskId)}
+      ></Modal>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
-import DeletingPopUp from "../components/DeletingPopUp/DeletingPopUp";
 
 const formContext = createContext({});
 
