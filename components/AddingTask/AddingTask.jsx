@@ -9,26 +9,35 @@ import Container from "../Container/Container";
 import Button from "../Button/Button";
 import AddTaskImg from "../AddTaskImg/AddTaskImg";
 import { taskSchema } from "../../validationConfig/yupSchemas";
+import { useFormContext } from "../../pages";
 
 export default function AddingTask() {
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const { handleSubmit } = useFormContext();
 
   return (
     <div className={styles.addingTask + " p-m"}>
       <AddTaskImg />
       <Title>New Task</Title>
 
-      <Form onSubmit={onSubmit} noValidate schema={taskSchema}>
+      <Form onSubmit={handleSubmit} noValidate schema={taskSchema}>
         <FormLabel htmlFor="Task Name">Task Name</FormLabel>
         <Paragraph>Add a short, descriptive headline</Paragraph>
-        <Input id="taskName" type="text" name="taskName" />
+        <Input
+          id="taskName"
+          type="text"
+          name="taskName"
+          placeholder="Task name"
+        />
         <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
         <Paragraph>
           Add a date when you think this task should be completed
         </Paragraph>
-        <Input id="taskDate" type="date" name="taskDate" />
+        <Input
+          id="taskDate"
+          type="date"
+          name="taskDate"
+          placeholder="Task date"
+        />
         <Container>
           <Button variant={"button_primary"} type="submit">
             Add Task
