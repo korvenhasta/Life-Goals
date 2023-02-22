@@ -52,8 +52,6 @@ export default function Home() {
           />
         </Head>
         <main className={styles.main + " p-m"}>
-          {/* <DeletingPopUp /> */}
-
           <AddingTask />
           {tasks.map((task) => {
             return (
