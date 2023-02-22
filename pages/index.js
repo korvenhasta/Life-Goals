@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
+import EditingTask from "../components/EditingTask/EditingTask";
 
 const formContext = createContext({});
 
@@ -53,6 +54,7 @@ export default function Home() {
         </Head>
         <main className={styles.main + " p-m"}>
           <AddingTask />
+          <EditingTask />
           {tasks.map((task) => {
             return (
               <TaskCard

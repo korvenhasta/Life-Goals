@@ -12,6 +12,7 @@ export default function Form({
   noValidate,
   schema,
 }) {
+  console.log("defaultValues: ", defaultValues);
   const methods = useForm({ defaultValues, resolver: yupResolver(schema) });
   const {
     register,
