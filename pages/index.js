@@ -16,13 +16,25 @@ export default function Home() {
 
   const [taskId, setTaskId] = useState(0);
 
+  function updateTask(taskName, taskDate, taskId) {
+    setTasks(
+      tasks.map((task) => {
+        if (taskId === task.id) {
+          task.task = taskName;
+          task.date = taskDate;
+        }
+        return task;
+      })
+    );
+  }
+
   function addTask(task) {
     setTasks([
       ...tasks,
       {
         id: taskId,
         task: task.taskName,
-        date: new Date(task.taskDate).toLocaleDateString(),
+        date: task.taskDate,
       },
     ]);
     setTaskId(taskId + 1);
@@ -36,17 +48,16 @@ export default function Home() {
     );
   }
 
-  console.log("TASKS: ", tasks);
-
   return (
     <formContext.Provider
       value={{
         handleSubmit: addTask,
+        updateTask: updateTask,
       }}
     >
       <>
         <Head>
-          <title>Awesome ToDo List</title>
+          <title>Life Goals</title>
           <meta
             name="description"
             content="Help people to reach their goals through links between tasks and goals with timeline."

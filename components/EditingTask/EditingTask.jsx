@@ -10,49 +10,68 @@ import Button from "../Button/Button";
 import EditTaskImg from "../EditTaskImg/EditTaskImg";
 import { taskSchema } from "../../validationConfig/yupSchemas";
 import { useFormContext } from "../../pages";
+import day from "dayjs";
 
-export default function AddingTask() {
-  const { handleSubmit } = useFormContext();
+export default function EditingTask({
+  openEditing,
+  onCloseEditing,
+  taskName,
+  taskDate,
+  taskId,
+}) {
+  const { updateTask } = useFormContext();
+  if (!openEditing) return null;
+
+  const handleSubmit = (task) => {
+    updateTask(task.taskName, task.taskDate, taskId);
+    onCloseEditing();
+  };
 
   return (
-    <div className={styles.editingTask + " p-m"}>
-      <EditTaskImg />
-      <Title>Editing task</Title>
+    <>
+      <div className={styles.overlay_styles} onClick={onCloseEditing} />
 
-      <Form
-        onSubmit={handleSubmit}
-        noValidate
-        schema={taskSchema}
-        defaultValues={{
-          taskName: "testing",
-          taskDate: "2025-01-01",
-        }}
-      >
-        <FormLabel htmlFor="Task Name">Task Name</FormLabel>
-        <Paragraph>Add a short, descriptive headline</Paragraph>
-        <Input
-          id="taskName"
-          type="text"
-          name="taskName"
-          placeholder="Task name"
-        />
-        <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
-        <Paragraph>
-          Add a date when you think this task should be completed
-        </Paragraph>
-        <Input
-          id="taskDate"
-          type="date"
-          name="taskDate"
-          placeholder="Task date"
-        />
-        <Container>
-          <Button variant={"button_primary"} type="submit">
-            Save changes
-          </Button>
-          <Button variant={"button_secondary"}>Cancel</Button>
-        </Container>
-      </Form>
-    </div>
+      <div className={styles.editingTask + " p-m"}>
+        <EditTaskImg />
+        <Title>Editing task</Title>
+
+        <Form
+          onSubmit={handleSubmit}
+          noValidate
+          schema={taskSchema}
+          defaultValues={{
+            taskName: taskName,
+            taskDate: day(taskDate).format("YYYY-MM-DD"),
+          }}
+        >
+          <FormLabel htmlFor="Task Name">Task Name</FormLabel>
+          <Paragraph>Add a short, descriptive headline</Paragraph>
+          <Input
+            id="taskName"
+            type="text"
+            name="taskName"
+            placeholder="Task name"
+          />
+          <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
+          <Paragraph>
+            Add a date when you think this task should be completed
+          </Paragraph>
+          <Input
+            id="taskDate"
+            type="date"
+            name="taskDate"
+            placeholder="Task date"
+          />
+          <Container>
+            <Button variant={"button_primary"} type="submit">
+              Save changes
+            </Button>
+            <Button variant={"button_secondary"} onClick={onCloseEditing}>
+              Cancel
+            </Button>
+          </Container>
+        </Form>
+      </div>
+    </>
   );
 }
