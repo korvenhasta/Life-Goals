@@ -3,6 +3,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
+import defaultTasks from "../dummyData/tasks";
+import Timeline from "../components/Timeline/Timeline";
 
 const formContext = createContext({});
 
@@ -64,6 +66,18 @@ export default function Home() {
               />
             );
           })}
+          {/* {defaultTasks.map((task) => {
+            return (
+              <TaskCard
+                key={task.id}
+                taskId={task.id}
+                taskName={task.task}
+                taskDate={task.date}
+              />
+            );
+          })} */}
+
+          <Timeline />
         </main>
       </>
     </formContext.Provider>
