@@ -1,0 +1,38 @@
+.editingTask {
+  display: grid;
+  gap: 16px;
+  max-width: 700px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 42px;
+  z-index: 1000;
+}
+
+.overlay_styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+  .editingTask {
+    width: 80%;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .editingTask {
+    width: 60%;
+  }
+}
