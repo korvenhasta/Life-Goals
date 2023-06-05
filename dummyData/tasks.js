@@ -12,7 +12,7 @@ const defaultTasks = [
   {
     id: 3,
     task: "Check mortgage rates",
-    date: "2025-01-01",
+    date: "2026-01-01",
   },
   {
     id: 4,
@@ -23,6 +23,31 @@ const defaultTasks = [
     id: 5,
     task: "Start to save 500 euro each month",
     date: "2025-01-02",
+  },
+  {
+    id: 6,
+    task: "Schedule a car maintenance",
+    date: "2027-01-01",
+  },
+  {
+    id: 7,
+    task: "Pay taxes",
+    date: "2028-04-01",
+  },
+  {
+    id: 8,
+    task: "Make an aapointment with dentist",
+    date: "2026-10-25",
+  },
+  {
+    id: 9,
+    task: "Buy Christmas presents",
+    date: "2025-11-01",
+  },
+  {
+    id: 10,
+    task: "Plan a birthday party",
+    date: "2026-03-01",
   },
 ];
 

@@ -1,0 +1,14 @@
+.timelineCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: #F7F8FD;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .timelineCard {
+    gap: 24px;
+  }
+}

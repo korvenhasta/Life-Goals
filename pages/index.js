@@ -5,6 +5,7 @@ import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
 import defaultTasks from "../dummyData/tasks";
 import Timeline from "../components/Timeline/Timeline";
+import TimelineCard from "../components/TimelineCard/TimelineCard";
 
 const formContext = createContext({});
 
@@ -37,7 +38,7 @@ export default function Home() {
     );
   }
 
-  console.log("TASKS: ", tasks);
+  // console.log("TASKS: ", tasks);
 
   return (
     <formContext.Provider
@@ -78,6 +79,17 @@ export default function Home() {
           })} */}
 
           <Timeline />
+          {/* 
+          {defaultTasks.map((task) => {
+            return (
+              <TimelineCard
+                key={task.id}
+                taskId={task.id}
+                taskName={task.task}
+                taskDate={task.date}
+              />
+            );
+          })} */}
         </main>
       </>
     </formContext.Provider>
