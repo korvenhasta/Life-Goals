@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from "react";
+import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
@@ -77,6 +78,7 @@ export default function Home() {
               />
             );
           })}
+          <Link href="/timeline">Timeline</Link>
         </main>
       </>
     </formContext.Provider>
