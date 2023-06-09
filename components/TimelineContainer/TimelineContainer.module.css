@@ -1,0 +1,29 @@
+.timelineContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;  
+  gap: 16px;
+  width: 100%;
+  align-items: top;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .timelineContainer {
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    padding-left: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .timelineContainer {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .timelineContainer {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
