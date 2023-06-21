@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./LogoImageContainer.module.css";
+import styles from "./ImageContainer.module.css";
 
 export default function ImageContainer({ children, ...props }) {
   return (
-    <div {...props} className={styles.logoImageContainer}>
+    <div {...props} className={styles.imageContainer}>
       {children}
     </div>
   );

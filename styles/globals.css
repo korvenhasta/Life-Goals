@@ -22,11 +22,18 @@ body {
   }
 }
 
+.p-s {
+  padding: 12px;
+}
+
 .p-m {
   padding: 24px;
 }
 
 @media screen and (min-width: 768px) {
+  .p-s {
+    padding: 24px;
+  }
   .p-m {
     padding: 42px;
   }
