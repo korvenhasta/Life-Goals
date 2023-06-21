@@ -4,9 +4,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
-import defaultTasks from "../dummyData/tasks";
-import Timeline from "../components/Timeline/Timeline";
-import TimelineCard from "../components/TimelineCard/TimelineCard";
 import EditingTask from "../components/EditingTask/EditingTask";
 
 const formContext = createContext({});
@@ -81,7 +78,6 @@ export default function Home() {
               />
             );
           })}
-          <Link href="/timeline">Timeline</Link>
         </main>
       </>
     </formContext.Provider>

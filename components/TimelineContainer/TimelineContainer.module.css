@@ -4,7 +4,7 @@
   grid-template-columns: 1fr;  
   gap: 16px;
   width: 100%;
-  align-items: top;
+  /* align-items: top; */
   justify-content: space-between;
 }
 

@@ -44,9 +44,10 @@ export default function Timeline(props) {
         {timeLineTasks.map((task) => {
           return (
             <>
+              {console.log(task.year)}
               <Container>
                 <TimelineContainer>
-                  <Paragraph className={styles.year} key={task.year}>
+                  <Paragraph key={task.year} className={styles.year}>
                     {task.year}
                   </Paragraph>
                   {task.tasks.map((task) => {

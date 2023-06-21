@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import ImageContainer from "../LogoImageContainer/LogoImageContainer";
+import FormImageContainer from "../FormImageContainer/FormImageContainer";
 import styles from "./EditTaskImg.module.css";
 
 export default function EditTaskImg() {
   return (
-    <ImageContainer>
+    <FormImageContainer>
       <Image
         src="/edittask.svg"
         alt="Picture of the editing a task"
@@ -13,6 +13,6 @@ export default function EditTaskImg() {
         fill
         sizes="(min-width: 768px) 100vw"
       />
-    </ImageContainer>
+    </FormImageContainer>
   );
 }
