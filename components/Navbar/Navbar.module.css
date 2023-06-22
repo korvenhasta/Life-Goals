@@ -1,8 +1,11 @@
+/* Across the whole screen */
 .navbar {
-  width: 100%;
-  max-width: 1440px;
-  height: 72px;
   background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%);
+}
+
+/* Align with the rest of the content */
+.navbarContent {
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,10 +23,9 @@
   color: #FFFFFF;
 }
 
+
+
 @media screen and (min-width: 768px) {
-  /* .navbar {
-    height: 178px;
-  } */
 
   .textLink {
     font-size: 20px;

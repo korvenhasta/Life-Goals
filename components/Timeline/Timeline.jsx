@@ -43,26 +43,21 @@ export default function Timeline(props) {
       <Container>
         {timeLineTasks.map((task) => {
           return (
-            <>
-              {console.log(task.year)}
-              <Container>
-                <TimelineContainer>
-                  <Paragraph key={task.year} className={styles.year}>
-                    {task.year}
-                  </Paragraph>
-                  {task.tasks.map((task) => {
-                    return (
-                      <TimelineCard
-                        key={task.id}
-                        taskId={task.id}
-                        taskName={task.task}
-                        taskDate={task.date}
-                      />
-                    );
-                  })}
-                </TimelineContainer>
-              </Container>
-            </>
+            <Container key={task.year}>
+              <TimelineContainer>
+                <Paragraph className={styles.year}>{task.year}</Paragraph>
+                {task.tasks.map((task) => {
+                  return (
+                    <TimelineCard
+                      key={task.id}
+                      taskId={task.id}
+                      taskName={task.task}
+                      taskDate={task.date}
+                    />
+                  );
+                })}
+              </TimelineContainer>
+            </Container>
           );
         })}
       </Container>
