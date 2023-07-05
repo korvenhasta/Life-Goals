@@ -15,6 +15,7 @@
     "dayjs": "^1.11.7",
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
+    "prisma": "^4.16.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.1",
