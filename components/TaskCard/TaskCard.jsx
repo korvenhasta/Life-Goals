@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Container from "../Container/Container";
 import Modal from "../../pages/Modal";
 import EditingTask from "../EditingTask/EditingTask";
+import { DateTime } from "luxon";
 
 export default function TaskCard(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,8 @@ export default function TaskCard(props) {
     <div className={styles.taskCard + " p-m"}>
       <Subtitle>{props.taskName}</Subtitle>
       <Paragraph>
-        Estimated due date: {new Date(props.taskDate).toLocaleDateString()}
+        Estimated due date:{" "}
+        {DateTime.fromISO(props.taskDate).toFormat("dd-MM-yyyy")}
       </Paragraph>
       <Container>
         <Button variant={"button_primary"}>Complete</Button>
