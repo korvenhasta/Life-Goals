@@ -8,12 +8,6 @@ import EditingTask from "../components/EditingTask/EditingTask";
 import prisma from "../prisma/client";
 import TaskContextProvider from "../contexts/TaskContext";
 
-const formContext = createContext({});
-
-export function useFormContext() {
-  return useContext(formContext);
-}
-
 export default function Home(props) {
   const [tasks, setTasks] = useState([]);
 
@@ -64,6 +58,5 @@ export default function Home(props) {
 
 export async function getServerSideProps(req) {
   const tasks = await prisma.task.findMany();
-  // console.log("PROPS: ", tasks);
   return { props: { tasks: JSON.parse(JSON.stringify(tasks)) } };
 }

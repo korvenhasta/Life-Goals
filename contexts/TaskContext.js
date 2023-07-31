@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+import { useRouter } from "next/router";
 import { useState, createContext, useContext } from "react";
 
 const tasksContext = createContext({});
@@ -7,7 +9,11 @@ export function useTasks() {
 
 export default function TaskContextProvider({ children }) {
   const [tasks, setTasks] = useState([]);
-  const [taskId, setTaskId] = useState(0);
+  const [taskName, setTaskName] = useState("");
+  const [taskDate, setTaskDate] = useState("");
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   function updateTask(taskName, taskDate, taskId) {
     setTasks(
@@ -21,25 +27,41 @@ export default function TaskContextProvider({ children }) {
     );
   }
 
-  function addTask(task) {
-    console.log("Submit? ", task);
-    setTasks([
-      ...tasks,
-      {
-        id: taskId,
-        task: task.taskName,
-        date: task.taskDate,
+  async function createTask(formValues) {
+    setLoading(true);
+    setTaskName(formValues.taskName);
+    setTaskDate(formValues.taskDate);
+
+    const date = DateTime.fromISO(formValues.taskDate.toISOString()).toFormat(
+      "dd-MM-yyyy"
+    );
+
+    const response = await fetch("/api/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    ]);
-    setTaskId(taskId + 1);
+      body: JSON.stringify({
+        name: formValues.taskName,
+        date: formValues.taskDate,
+      }),
+    });
+    const data = await response.json();
+    if (response.status === 200) {
+      router.push(`/tasks/${data.id}`);
+    } else {
+      setError(data.message);
+      setLoading(false);
+    }
   }
 
   return (
     <tasksContext.Provider
       value={{
         tasks: tasks,
-        handleSubmit: addTask,
+        handleSubmit: createTask,
         updateTask: updateTask,
+        loading: loading,
       }}
     >
       {children}

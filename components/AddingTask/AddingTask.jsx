@@ -9,44 +9,17 @@ import Container from "../Container/Container";
 import Button from "../Button/Button";
 import AddTaskImg from "../AddTaskImg/AddTaskImg";
 import { taskSchema } from "../../validationConfig/yupSchemas";
-import { useFormContext } from "../../pages";
-import { useRouter } from "next/router";
+import { useTasks } from "../../contexts/TaskContext";
 
 export default function AddingTask() {
-  const { handleSubmit } = useFormContext();
-  const router = useRouter();
-  const [taskName, setTaskName] = useState("");
-  const [taskDate, setTaskDate] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  async function createTask(event) {
-    setLoading(true);
-    event.preventDefault();
-
-    const response = await fetch("/api/tasks", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name: taskName, date: taskDate }),
-    });
-    const data = await response.json();
-    if (response.status === 200) {
-      router.push(`/tasks/${data.id}`);
-      // if they stay on the same page -> setState (show them what happened)
-    } else {
-      setError(data.message);
-      setLoading(false);
-    }
-  }
+  const { handleSubmit, loading } = useTasks();
 
   return (
     <div className={styles.addingTask + " p-m"}>
       <AddTaskImg />
       <Title>New Task</Title>
 
-      <Form onSubmit={handleSubmit} noValidate schema={taskSchema}>
+      <Form onSubmit={handleSubmit} schema={taskSchema}>
         <FormLabel htmlFor="Task Name">Task Name</FormLabel>
         <Paragraph>Add a short, descriptive headline</Paragraph>
         <Input
@@ -54,8 +27,6 @@ export default function AddingTask() {
           type="text"
           name="taskName"
           placeholder="Task name"
-          // value={taskName}
-          // onChange={(event) => setTaskName(event.target.value)}
         />
         <FormLabel htmlFor="taskDate">Estimated due date</FormLabel>
         <Paragraph>
@@ -66,8 +37,6 @@ export default function AddingTask() {
           type="date"
           name="taskDate"
           placeholder="Task date"
-          // value={taskDate}
-          // onChange={(event) => setTaskDate(event.target.value)}
         />
         <Container>
           <Button variant={"button_primary"} type="submit" disabled={loading}>
