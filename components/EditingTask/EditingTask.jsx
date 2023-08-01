@@ -9,8 +9,8 @@ import Container from "../Container/Container";
 import Button from "../Button/Button";
 import EditTaskImg from "../EditTaskImg/EditTaskImg";
 import { taskSchema } from "../../validationConfig/yupSchemas";
-import { useFormContext } from "../../pages";
 import day from "dayjs";
+import { useTasks } from "../../contexts/TaskContext";
 
 export default function EditingTask({
   openEditing,
@@ -19,7 +19,7 @@ export default function EditingTask({
   taskDate,
   taskId,
 }) {
-  const { updateTask } = useFormContext();
+  const { updateTask } = useTasks();
   if (!openEditing) return null;
 
   const handleSubmit = (task) => {

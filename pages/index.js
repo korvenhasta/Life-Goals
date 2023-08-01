@@ -5,41 +5,13 @@ import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
 import EditingTask from "../components/EditingTask/EditingTask";
+import prisma from "../prisma/client";
+import TaskContextProvider from "../contexts/TaskContext";
 
-const formContext = createContext({});
-
-export function useFormContext() {
-  return useContext(formContext);
-}
-
-export default function Home() {
+export default function Home(props) {
   const [tasks, setTasks] = useState([]);
 
   const [taskId, setTaskId] = useState(0);
-
-  function updateTask(taskName, taskDate, taskId) {
-    setTasks(
-      tasks.map((task) => {
-        if (taskId === task.id) {
-          task.task = taskName;
-          task.date = taskDate;
-        }
-        return task;
-      })
-    );
-  }
-
-  function addTask(task) {
-    setTasks([
-      ...tasks,
-      {
-        id: taskId,
-        task: task.taskName,
-        date: task.taskDate,
-      },
-    ]);
-    setTaskId(taskId + 1);
-  }
 
   function deleteTask(taskId) {
     setTasks(
@@ -50,36 +22,41 @@ export default function Home() {
   }
 
   return (
-    <formContext.Provider
-      value={{
-        handleSubmit: addTask,
-        updateTask: updateTask,
-      }}
-    >
-      <>
-        <Head>
-          <title>Life Goals</title>
-          <meta
-            name="description"
-            content="Help people to reach their goals through links between tasks and goals with timeline."
-          />
-        </Head>
-        <main className={styles.main + " p-m"}>
-          <AddingTask />
-          <EditingTask />
-          {tasks.map((task) => {
-            return (
+    <TaskContextProvider>
+      <Head>
+        <title>Life Goals</title>
+        <meta
+          name="description"
+          content="Help people to reach their goals through links between tasks and goals with timeline."
+        />
+      </Head>
+      <main className={styles.main + " p-m"}>
+        <Link href="/tasks/new">New task</Link>
+        {/* <AddingTask />
+        <EditingTask /> */}
+        {props.tasks.map((task) => {
+          return (
+            <Link
+              className={styles.taskCardLink}
+              key={task.id}
+              href={`/tasks/${task.id}`}
+            >
               <TaskCard
                 key={task.id}
                 taskId={task.id}
-                taskName={task.task}
+                taskName={task.name}
                 taskDate={task.date}
                 handleDeleteTask={deleteTask}
               />
-            );
-          })}
-        </main>
-      </>
-    </formContext.Provider>
+            </Link>
+          );
+        })}
+      </main>
+    </TaskContextProvider>
   );
+}
+
+export async function getServerSideProps(req) {
+  const tasks = await prisma.task.findMany();
+  return { props: { tasks: JSON.parse(JSON.stringify(tasks)) } };
 }

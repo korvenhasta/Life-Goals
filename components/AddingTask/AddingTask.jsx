@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AddingTask.module.css";
 import Form from "../Form/Form";
 import Title from "../Title/Title";
@@ -9,17 +9,17 @@ import Container from "../Container/Container";
 import Button from "../Button/Button";
 import AddTaskImg from "../AddTaskImg/AddTaskImg";
 import { taskSchema } from "../../validationConfig/yupSchemas";
-import { useFormContext } from "../../pages";
+import { useTasks } from "../../contexts/TaskContext";
 
 export default function AddingTask() {
-  const { handleSubmit } = useFormContext();
+  const { handleSubmit, loading } = useTasks();
 
   return (
     <div className={styles.addingTask + " p-m"}>
       <AddTaskImg />
       <Title>New Task</Title>
 
-      <Form onSubmit={handleSubmit} noValidate schema={taskSchema}>
+      <Form onSubmit={handleSubmit} schema={taskSchema}>
         <FormLabel htmlFor="Task Name">Task Name</FormLabel>
         <Paragraph>Add a short, descriptive headline</Paragraph>
         <Input
@@ -39,8 +39,8 @@ export default function AddingTask() {
           placeholder="Task date"
         />
         <Container>
-          <Button variant={"button_primary"} type="submit">
-            Add Task
+          <Button variant={"button_primary"} type="submit" disabled={loading}>
+            {loading ? "Loading..." : "Add Task"}
           </Button>
           <Button variant={"button_secondary"}>Cancel</Button>
         </Container>
