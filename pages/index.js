@@ -33,6 +33,7 @@ export default function Home(props) {
       </Head>
       <main className={styles.main + " p-m"}>
         <LoginControls />
+        <Link href="/secret">TO THE SECRET PAGE</Link>
         <Link href="/tasks/new">New task</Link>
         {/* <AddingTask />
         <EditingTask /> */}
