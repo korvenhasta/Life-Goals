@@ -7,6 +7,7 @@ import AddingTask from "../components/AddingTask/AddingTask";
 import EditingTask from "../components/EditingTask/EditingTask";
 import prisma from "../prisma/client";
 import TaskContextProvider from "../contexts/TaskContext";
+import LoginControls from "../components/LoginControls/LoginControls";
 
 export default function Home(props) {
   const [tasks, setTasks] = useState([]);
@@ -31,6 +32,7 @@ export default function Home(props) {
         />
       </Head>
       <main className={styles.main + " p-m"}>
+        <LoginControls />
         <Link href="/tasks/new">New task</Link>
         {/* <AddingTask />
         <EditingTask /> */}
