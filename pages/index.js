@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import TaskCard from "../components/TaskCard/TaskCard";
 import AddingTask from "../components/AddingTask/AddingTask";
 import EditingTask from "../components/EditingTask/EditingTask";
-import prisma from "../prisma/client";
+import { prisma } from "../prisma/client";
 import TaskContextProvider from "../contexts/TaskContext";
 import LoginControls from "../components/LoginControls/LoginControls";
 

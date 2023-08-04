@@ -2,7 +2,7 @@ import { useState, createContext, useContext } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
-import prisma from "../../prisma/client";
+import { prisma } from "../../prisma/client";
 import TaskContextProvider from "../../contexts/TaskContext";
 import TaskCard from "../../components/TaskCard/TaskCard";
 

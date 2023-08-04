@@ -1,4 +1,4 @@
-import prisma from "../../prisma/client";
+import { prisma } from "../../prisma/client";
 
 // api
 export default async function handler(req, res) {
