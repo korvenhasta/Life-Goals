@@ -11,9 +11,11 @@ datasource db {
 }
 
 model Task {
-  id   String   @id @default(cuid())
-  name String
-  date DateTime
+  id     String   @id @default(cuid())
+  name   String
+  date   DateTime
+  userId String   @default("clkw92j8u00001mm4wigdb9t9")
+  user   User     @relation(fields: [userId], references: [id])
 }
 
 model Account {
@@ -51,6 +53,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  tasks         Task[]
 }
 
 model VerificationToken {
