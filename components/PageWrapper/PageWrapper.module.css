@@ -1,0 +1,6 @@
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  gap: 30px;
+  padding: 94px 165px;
+}

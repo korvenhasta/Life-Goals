@@ -1,0 +1,10 @@
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 72px;
+  border-radius: 10px;
+  background: #373f68;
+  width: 100%;
+}

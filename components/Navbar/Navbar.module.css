@@ -1,32 +1,38 @@
 /* Across the whole screen */
 .navbar {
-  background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%);
+  background: radial-gradient(
+    128.88% 128.88% at 103.9% -10.39%,
+    #e84d70 0%,
+    #a337f6 53.09%,
+    #28a7ed 100%
+  );
+  height: 137px;
+  border-radius: 10px;
 }
 
 /* Align with the rest of the content */
 .navbarContent {
   max-width: 1440px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   margin: 0 auto;
 }
 
 .textLink {
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
   line-height: 22px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-
-
 @media screen and (min-width: 768px) {
-
   .textLink {
     font-size: 20px;
     line-height: 29px;

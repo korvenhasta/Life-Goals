@@ -1,19 +1,16 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import TimelineImg from "../TimelineImg/TimelineImg";
+import LoginControls from "../LoginControls/LoginControls";
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navbarContent + " p-m"}>
+    <nav className={styles.navbar + " p-s"}>
+      <div className={styles.navbarContent}>
         <Link href="/" className={styles.textLink}>
           LIFE GOALS
         </Link>
-
-        <Link href="/timeline">
-          <TimelineImg />
-        </Link>
+        <LoginControls />
       </div>
     </nav>
   );

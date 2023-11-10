@@ -5,8 +5,7 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   max-width: 1440px;
-  margin: 0 auto;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,17 +15,5 @@
 
 .taskCardLink {
   width: 100%;
-  max-width: 700px;
-}
-
-@media screen and (min-width: 768px) {
-  .taskCardLink {
-    width: 80%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .taskCardLink {
-    width: 60%;
-  }
+  /* max-width: 700px; */
 }
