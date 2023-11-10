@@ -1,0 +1,22 @@
+.avatarContainer {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.avatarImage {
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .avatarContainer {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+  }
+
+  .avatarImage {
+    border-radius: 40px;
+  }
+}
