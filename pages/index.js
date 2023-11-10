@@ -7,12 +7,16 @@ import AddingTask from "../components/AddingTask/AddingTask";
 import EditingTask from "../components/EditingTask/EditingTask";
 import { prisma } from "../prisma/client";
 import TaskContextProvider from "../contexts/TaskContext";
-import LoginControls from "../components/LoginControls/LoginControls";
+import Navbar from "../components/Navbar/Navbar";
+import PageWrapper from "../components/PageWrapper/PageWrapper";
+import ActionBar from "../components/ActionBar/ActionBar";
+import TimelineImg from "../components/TimelineImg/TimelineImg";
+import Button from "../components/Button/Button";
 
 export default function Home(props) {
   const [tasks, setTasks] = useState([]);
 
-  const [taskId, setTaskId] = useState(0);
+  // const [taskId, setTaskId] = useState(0);
 
   function deleteTask(taskId) {
     setTasks(
@@ -31,19 +35,27 @@ export default function Home(props) {
           content="Help people to reach their goals through links between tasks and goals with timeline."
         />
       </Head>
-      <main className={styles.main + " p-m"}>
-        <LoginControls />
-        <Link href="/secret">TO THE SECRET PAGE</Link>
-        <Link href="/tasks/new">New task</Link>
-        {/* <AddingTask />
-        <EditingTask /> */}
-        {props.tasks.map((task) => {
-          return (
-            <Link
-              className={styles.taskCardLink}
-              key={task.id}
-              href={`/tasks/${task.id}`}
-            >
+      <PageWrapper>
+        <Navbar />
+        <main className={styles.main}>
+          <ActionBar>
+            <Link href="/timeline">
+              <TimelineImg />
+            </Link>
+            <Link href="/tasks/new">
+              <Button variant="button_primary">New task</Button>
+            </Link>
+          </ActionBar>
+          {/* <Link href="/secret">TO THE SECRET PAGE</Link> */}
+          {/* <Link href="/list">TO THE LIST PAGE</Link> */}
+
+          {props.tasks.map((task) => {
+            return (
+              // <Link
+              //   className={styles.taskCardLink}
+              //   key={task.id}
+              //   href={`/tasks/${task.id}`}
+              // >
               <TaskCard
                 key={task.id}
                 taskId={task.id}
@@ -51,10 +63,11 @@ export default function Home(props) {
                 taskDate={task.date}
                 handleDeleteTask={deleteTask}
               />
-            </Link>
-          );
-        })}
-      </main>
+              // </Link>
+            );
+          })}
+        </main>
+      </PageWrapper>
     </TaskContextProvider>
   );
 }

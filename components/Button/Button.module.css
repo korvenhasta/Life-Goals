@@ -1,12 +1,12 @@
 .button {
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
   line-height: 19px;
   width: 248px;
   height: 40px;
-  color: #F2F4FE;
+  color: #f2f4fe;
   border-radius: 10px;
   border: none;
 }
@@ -15,39 +15,38 @@
 
 /* Primary */
 .button_primary {
-  background: #AD1FEA;
+  background: #ad1fea;
 }
 
 .button_primary:hover {
-  background: #C75AF6;
+  background: #c75af6;
 }
 
 /* Edit */
 .button_edit {
-  background: #4661E6;
+  background: #4661e6;
 }
 
 .button_edit:hover {
-  background: #7C91F9;
+  background: #7c91f9;
 }
 
 /* Secondary */
 .button_secondary {
-  background: #3A4374
+  background: #3a4374;
 }
 
 .button_secondary:hover {
-  background: #656EA3;
+  background: #656ea3;
 }
-
 
 /* Danger */
 .button_danger {
-  background: #D73737;
+  background: #d73737;
 }
 
 .button_danger:hover {
-  background: #E98888;
+  background: #e98888;
 }
 
 @media screen and (min-width: 768px) {
@@ -59,9 +58,9 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .button {
     font-size: 18px;
     line-height: 26px;
   }
-}
+} */

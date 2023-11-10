@@ -1,16 +1,15 @@
-import { useState, createContext, useContext } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../../styles/Home.module.css";
-import { prisma } from "../../prisma/client";
-import TaskContextProvider from "../../contexts/TaskContext";
-import TaskCard from "../../components/TaskCard/TaskCard";
-import PageWrapper from "../../components/PageWrapper/PageWrapper";
-import Navbar from "../../components/Navbar/Navbar";
-import ActionBar from "../../components/ActionBar/ActionBar";
-import GoBack from "../../components/GoBack/GoBack";
+import styles from "../../../styles/Home.module.css";
+import TaskContextProvider from "../../../contexts/TaskContext";
+import GoBack from "../../../components/GoBack/GoBack";
+import PageWrapper from "../../../components/PageWrapper/PageWrapper";
+import Navbar from "../../../components/Navbar/Navbar";
+import ActionBar from "../../../components/ActionBar/ActionBar";
+import EditingTask from "../../../components/EditingTask/EditingTask";
+import { prisma } from "../../../prisma/client";
 
-export default function Tasks(props) {
+export default function EditTask(props) {
   return (
     <TaskContextProvider>
       <Head>
@@ -29,7 +28,7 @@ export default function Tasks(props) {
               <GoBack />
             </Link>
           </ActionBar>
-          <TaskCard
+          <EditingTask
             taskId={props.task.id}
             taskName={props.task.name}
             taskDate={props.task.date}
